@@ -1,0 +1,40 @@
+{
+  "name": "api.akroma.io",
+  "version": "0.0.0",
+  "description": "An API for the Akroma blockchain",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Stephen Cavaliere",
+    "email": "stephen.cavaliere@akroma.io"
+  },
+  "homepage": "https://akroma.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akroma-project/api.akroma.io"
+  },
+  "bugs": {
+    "url": "https://github.com/akroma-project/api.akroma.io/issues",
+    "email": "team@akroma.io"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "prestart": "tsc",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "^4.5.9",
+    "@nestjs/core": "^4.5.10",
+    "@nestjs/swagger": "^1.1.4",
+    "@nestjs/testing": "^4.5.5",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^5.5.6",
+    "typescript": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^9.3.0",
+    "nodemon": "^1.14.1",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1"
+  }
+}
