@@ -19,21 +19,33 @@
   },
   "scripts": {
     "dev": "nodemon",
+    "lint": "tslint --project tsconfig.json",
     "prestart": "tsc",
-    "start": "node dist/main.js"
+    "start": "node dist/main.js",
+    "test": "jest --config=jest.json",
+    "test:watch": "jest --watch --config=jest.json",
+    "test:coverage": "jest --config=jest.json --coverage --coverageDirectory=coverage"
   },
   "dependencies": {
     "@nestjs/common": "^4.5.9",
     "@nestjs/core": "^4.5.10",
+    "@nestjs/mongoose": "^3.0.1",
     "@nestjs/swagger": "^1.1.4",
     "@nestjs/testing": "^4.5.5",
+    "dotenv": "^5.0.0",
+    "mongoose": "^5.0.2",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^5.5.6",
     "typescript": "^2.6.2"
   },
   "devDependencies": {
+    "@types/dotenv": "^4.0.2",
+    "@types/jest": "^22.1.1",
+    "@types/mongoose": "^5.0.0",
     "@types/node": "^9.3.0",
+    "jest": "^22.1.4",
     "nodemon": "^1.14.1",
+    "ts-jest": "^22.0.2",
     "ts-node": "^4.1.0",
     "tslint": "^5.9.1"
   }
