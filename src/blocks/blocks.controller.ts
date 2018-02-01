@@ -8,7 +8,7 @@ import { BlocksService } from './services/blocks.service';
 @Controller('blocks')
 export class BlocksController {
   constructor(
-    private readonly blocksComponent: BlocksService,
+    private readonly blocksService: BlocksService,
   ) { }
 
   @Get()
@@ -29,14 +29,14 @@ export class BlocksController {
     @Query('before_block') beforeBlockId: number = Infinity,
     @Query('limit') limit: number = 100,
   ): Promise<Block[]> {
-    return await this.blocksComponent
+    return await this.blocksService
       .getAll(beforeBlockId, limit);
   }
 
-  @Get(':id')
+  @Get(':number')
   @ApiResponse({ status: HttpStatus.OK })
-  async findOne(@Param('id') blockId: number): Promise<Block> {
-    return await this.blocksComponent
-      .findOne(blockId);
+  async findOne(@Param('number') blockNumber: number): Promise<Block> {
+    return await this.blocksService
+      .findOne(blockNumber);
   }
 }
