@@ -20,7 +20,8 @@
   "scripts": {
     "dev": "nodemon",
     "lint": "tslint --project tsconfig.json",
-    "prestart": "tsc",
+    "build": "tsc && cp .env dist",
+    "prestart": "npm run build",
     "start": "node dist/main.js",
     "test": "jest --config=jest.json",
     "test:watch": "jest --watch --config=jest.json",
