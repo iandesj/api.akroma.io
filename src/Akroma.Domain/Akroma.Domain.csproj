@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Brickweave.Cqrs" Version="0.6.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Akroma.Web3\Akroma.Web3.csproj" />
+  </ItemGroup>
+</Project>
