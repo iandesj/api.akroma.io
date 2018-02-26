@@ -5,6 +5,7 @@ namespace Akroma.Persistence.SQL.Model
         public string Hash { get; set; }
         public string Nonce { get; set; }
         public string BlockHash { get; set; }
+        public int BlockNumber { get; set; }
         public int TransactionIndex { get; set; }
         public string From { get; set; }
         public string To { get; set; }
@@ -16,7 +17,7 @@ namespace Akroma.Persistence.SQL.Model
 
         public Domain.Transactions.Models.Transaction ToTransaction()
         {
-            return new Domain.Transactions.Models.Transaction(Hash, Nonce, BlockHash, TransactionIndex, From, To, Value,
+            return new Domain.Transactions.Models.Transaction(Hash, Nonce, BlockHash, BlockNumber, TransactionIndex, From, To, Value,
                 Gas, GasPrice, Timestamp, Input);
         }
     }

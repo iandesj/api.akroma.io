@@ -16,6 +16,9 @@ namespace Akroma.Persistence.CosmosDb.Entities
         [BsonElement("blockHash")]
         public string BlockHash { get; set; }
 
+        [BsonElement("blockNumber")]
+        public int BlockNumber { get; set; }
+
         [BsonElement("transactionIndex")]
         public int TransactionIndex { get; set; }
 
@@ -43,7 +46,7 @@ namespace Akroma.Persistence.CosmosDb.Entities
         public Transaction ToTransaction()
         {
             return new Transaction(
-                Hash, Nonce, BlockHash, TransactionIndex, From,
+                Hash, Nonce, BlockHash, BlockNumber, TransactionIndex, From,
                 To, Value, Gas, GasPrice, Timestamp, Input
             );
         }
