@@ -51,7 +51,7 @@ namespace Akroma.Import
                 }
                 await GetBlock(nextBlock.ToString());
             }
-            
+
         }
 
         private async Task<SaveResult> SaveTransactions(AkromaContext context, BlockWithTransactions unsavedBlock)
@@ -69,6 +69,7 @@ namespace Akroma.Import
                     Hash = transaction.Hash,
                     Nonce = transaction.Nonce.HexValue,
                     BlockHash = transaction.BlockHash,
+                    BlockNumber = int.Parse(transaction.BlockNumber.Value.ToString()),
                     TransactionIndex = int.Parse(transaction.TransactionIndex.Value.ToString()),
                     From = transaction.From,
                     To = transaction.To,
