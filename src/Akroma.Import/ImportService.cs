@@ -51,7 +51,6 @@ namespace Akroma.Import
                 }
                 await GetBlock(nextBlock.ToString());
             }
-
         }
 
         private async Task<SaveResult> SaveTransactions(AkromaContext context, BlockWithTransactions unsavedBlock)
